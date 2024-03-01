@@ -5,6 +5,7 @@ import {MainLayout} from "./layouts";
 import {GenresPage, MoviesPage} from "./pages";
 
 import {MovieDetailsPage} from "./pages/MovieDetailsPage";
+import {MovieInfo} from "./components";
 
 
 const router = createBrowserRouter([
@@ -17,7 +18,6 @@ const router = createBrowserRouter([
                 path:'movies', element:<MoviesPage/>,children:[
                     {
                         path:'movie/:id',element:<MovieDetailsPage/>
-
                     }
                 ]
             },

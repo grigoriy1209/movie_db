@@ -1,11 +1,9 @@
 import {useEffect, useState} from "react";
-import {Outlet, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import {movieService} from "../services/movieService";
 import {MovieInfo} from "../components";
+import {IMovie} from "../interfaces/movieInterface";
 
-
-
-interface IMovie{}
 
 const MovieDetailsPage = () => {
     const {id} = useParams();
@@ -16,12 +14,13 @@ const MovieDetailsPage = () => {
     useEffect(() => {
         movieService.getById(Number(id)).then(({data})=>setMovieDetails(data))
     }, [id]);
+
     return (
         <div>
-            {/*{*/}
-            {/*    movieDetails && <MovieInfo movieDetails={movieDetails}/>*/}
-            {/*}*/}
-            <Outlet/>
+            {
+                movieDetails && <MovieInfo movieInfo={movieDetails}/>
+            }
+
         </div>
     );
 };

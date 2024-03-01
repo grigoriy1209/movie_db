@@ -7,6 +7,7 @@ export interface IMovie {
     results: [];
     title: string;
     vote_average: number
+    movieDetails:[]
 
 }
 
