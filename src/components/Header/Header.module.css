@@ -1,23 +1,19 @@
-.Genres{
+.Header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: gray;
+    background-color: blue;
     height: 50px;
 }
 
-.Genres a {
+.Header a {
     text-decoration: none;
     color: snow;
     font-size: 25px;
-}
-
-.Genres a:hover {
-    text-decoration: underline;
-    color: black;
+    margin: 0 5px;
 
 }
 
-.Genres[class='active'] {
+.Header a[class='active'] {
     color: red;
 }

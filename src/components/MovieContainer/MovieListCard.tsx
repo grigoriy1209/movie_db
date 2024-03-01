@@ -1,16 +1,22 @@
-import {FC, PropsWithChildren, useState} from "react";
+import {FC} from "react";
+import {NavLink} from "react-router-dom";
 
-import {IMovie} from "../../interfaces";
+import {IMovie} from "../../interfaces/movieInterface";
 
-interface IProps extends  PropsWithChildren{
+interface IData {
     movie:IMovie
 }
-const MovieListCard:FC<IProps> = ({movie}) => {
-    const {id,title,poster_path}= movie;
+const MovieListCard:FC<IData> = ({movie}) => {
+
+    const {id,title,poster_path,vote_average}= movie
+
     return (
         <div>
-            {movie.poster_path && <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title}/>}
-            <div>{movie.title}</div>
+             <NavLink to= {`movie/${id}`}>
+            {movie.poster_path && <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={movie.title}/>}
+             </NavLink>
+           <h2>{movie.title}</h2>
+            <p>{vote_average}</p>
 
         </div>
     );

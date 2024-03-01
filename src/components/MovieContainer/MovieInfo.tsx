@@ -1,5 +1,5 @@
+interface IMovie{}
 const MovieInfo = () => {
-
     return (
         <div>
             MovieInfo
@@ -7,4 +7,4 @@ const MovieInfo = () => {
     );
 };
 
-export { MovieInfo };
+export {MovieInfo};

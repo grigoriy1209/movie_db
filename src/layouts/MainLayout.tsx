@@ -1,11 +1,13 @@
 import {Outlet} from "react-router-dom";
+import React from "react";
+import {Header} from "../components";
 
-import {GenresCss, Header} from "../components";
+
+
 const MainLayout = () => {
     return (
         <div>
             <Header/>
-            <GenresCss/>
            <Outlet/>
 
         </div>
