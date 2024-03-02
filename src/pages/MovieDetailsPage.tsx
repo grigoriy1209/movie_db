@@ -6,20 +6,17 @@ import {IMovie} from "../interfaces/movieInterface";
 
 
 const MovieDetailsPage = () => {
-    const {id} = useParams();
-    console.log(id)
+    const {movieId} = useParams();
+    console.log(movieId)
     const [movieDetails, setMovieDetails] = useState<IMovie| null >(null)
 
 
     useEffect(() => {
-        movieService.getById(Number(id)).then(({data})=>setMovieDetails(data))
-    }, [id]);
+        movieService.getById(Number(movieId)).then(({data})=>console.log(data))
+    }, [movieId]);
 
     return (
         <div>
-            {
-                movieDetails && <MovieInfo movieInfo={movieDetails}/>
-            }
 
         </div>
     );
