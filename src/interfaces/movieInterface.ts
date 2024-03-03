@@ -8,11 +8,8 @@ export interface IMovie {
     title: string;
     vote_average: number
     movieDetails:[]
-
+    movie_id:number
+    overview:string
+    genres:string[]
 }
 
-export interface IData{
-    results:IMovie[]
-    page:string
-    id:number
-}
