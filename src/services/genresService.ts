@@ -4,7 +4,7 @@ import {urls} from "../constants";
 import {IGenre} from "../interfaces";
 
 const genresService={
- getAll:():IRes<IGenre>=> apiService.get(urls.genre.base),
+    getAll:():IRes<IGenre>=> apiService.get(urls.genre.base),
     getById:(id:number):IRes<IGenre>=> apiService.get(urls.genre.byId(id))
 }
 export {
