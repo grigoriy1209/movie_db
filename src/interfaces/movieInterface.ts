@@ -12,5 +12,6 @@ export interface IMovie {
     overview:string
     genres:string[]
     backdrop_path:string
+    genre_id:number
 }
 
