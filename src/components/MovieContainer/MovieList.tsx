@@ -4,6 +4,7 @@ import {MovieListCard} from "./MovieListCard";
 import {UsePageQuery} from "../../hooks";
 import {IMovie} from "../../interfaces";
 import {movieService} from "../../services";
+import css from './Movie.module.css'
 
 interface IProps extends PropsWithChildren{}
 
@@ -17,13 +18,13 @@ const MovieList:FC<IProps> = () => {
         },
         [page]);
     return (
-        <div>
+        <div  className={css.Movie_Box}>
+            {
+                movies.map((movie, index) => <MovieListCard key={movie.id} movie={movie}/>)
+            }
             <button onClick={prevPage}>prev</button>
             <span>{page}</span>
             <button onClick={nextPage}>next</button>
-            {
-                movies.map((movie,index) => <MovieListCard key={movie.id} movie={movie}/>)
-            }
         </div>
     );
 };

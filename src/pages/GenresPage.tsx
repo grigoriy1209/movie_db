@@ -1,9 +1,10 @@
+import {Genres} from "../components/GenresContainer/Genres";
 
 
 const GenresPage = () => {
     return (
         <div>
-            GenresPage
+            <Genres/>
         </div>
     );
 };

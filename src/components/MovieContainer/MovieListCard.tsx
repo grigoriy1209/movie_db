@@ -1,6 +1,9 @@
 import {FC, PropsWithChildren} from "react";
 import {IMovie} from "../../interfaces";
 import {useNavigate} from "react-router-dom";
+import {FaStar} from "react-icons/fa";
+
+import css from "./Movie.module.css";
 
 interface IProps extends PropsWithChildren{
     movie:IMovie
@@ -14,9 +17,11 @@ const MovieListCard:FC<IProps> = ({movie}) => {
         navigate(`/movies/${movie.id}`,{state:{movie}})
     }
     return (
-        <div>
+        <div  className={css.Movie_box}>
             <div>{movie.title}</div>
-            <p>{vote_average}</p>
+            {Array.from({ length: Math.floor(vote_average/2 ) }, (_, index) => (
+                <FaStar key={index} />
+            ))}
             <button onClick={save}>
             {movie.poster_path && <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={movie.title} />}
             </button>

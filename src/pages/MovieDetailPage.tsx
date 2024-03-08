@@ -6,6 +6,7 @@ import {useParams} from "react-router-dom";
 
 import {MovieInfo} from "../components";
 
+
 const MovieDetailPage = () => {
     
     const {state} = useAppLocation<{movie:IMovie}>();
@@ -13,7 +14,7 @@ const MovieDetailPage = () => {
     const [movieInfo, setMovieInfo] = useState<IMovie | null> (null)
     const [genres, setGenres] = useState<string[]>([])
     const {id} = useParams<{id:string}>();
-    // const {ids} = useParams<{ids:string}>();
+
 
 
     useEffect(() => {
@@ -30,7 +31,7 @@ const MovieDetailPage = () => {
     }, [id, state]);
     
     return (
-        <div>
+        <div >
             {movieInfo && <MovieInfo movieInfo={movieInfo} genres={genres}/>}
         </div>
     );

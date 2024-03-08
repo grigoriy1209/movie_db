@@ -1,6 +1,5 @@
-export * from './MovieContainer/MovieList'
-export * from './MovieContainer/MovieInfo'
-export * from './MovieContainer/MovieListCard'
+export * from './MovieContainer'
+
 
 export * from './Header/Header'
 export * from './Header/Header.module.css'
