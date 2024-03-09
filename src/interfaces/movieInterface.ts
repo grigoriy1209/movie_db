@@ -10,7 +10,7 @@ export interface IMovie {
     movieDetails:[]
     movie_id:number
     overview:string
-    genres:string[]
+    genres:[]
     backdrop_path:string
     genre_id:number
 }

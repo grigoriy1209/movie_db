@@ -5,34 +5,34 @@ import {genresService} from "../../services";
 import {Genre} from "./Genre";
 import css from "./Genres.module.css";
 
-interface IProps extends PropsWithChildren{}
+interface IProps extends PropsWithChildren{
+    // genre:IGenre
+}
 const Genres:FC<IProps> = () => {
     const [genres, setGenres] = useState<IGenre[]>([])
-    const [movies, setMovies] = useState<IMovie[]>([])
-    const [selected, setSelected] = useState<number | null>(null)
+    // const [movies, setMovies] = useState<IMovie[]>([])
+    // const [selected, setSelected] = useState<number | null>(null)
 
-   const getGenre = (genreId:number)=>{
-       setSelected(genreId)
-   }
+
 
     useEffect(() => {
         genresService.getAll().then(({data})=>setGenres(data.genres))
     }, []);
 
-    useEffect(() => {
-        const filterMovie =selected !== null ?  movies.filter(movie =>movie.genre_id === selected):movies;
-        setMovies(filterMovie)
-    }, [selected,movies]);
+    // useEffect(() => {
+    //     const filterMovie =movies.filter(movie =>movie.genre_id)
+    //     setMovies(filterMovie)
+    // }, [movies]);
     return (
         <div className={css.Genre_Box}>
             {
-                genres.map(genre =>< Genre key={genre.id}  genre={genre} onClick={()=>getGenre(genre.id)}/>)
+                genres.map(genre =>< Genre key={genre.id}  genre={genre} />)
             }
-            {
-                movies.map(movie =>(
-                    <div key={movie.id}>{movie.title}</div>
-                ))
-            }
+            {/* {*/}
+            {/*    movies.map(movie =>(*/}
+            {/*        <div key={movie.id}>{movie.title}</div>*/}
+            {/*    ))*/}
+            {/*}*/}
         </div>
     );
 };
