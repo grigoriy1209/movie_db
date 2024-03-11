@@ -1,3 +1,5 @@
+import {IGenre} from "./genresInterface";
+
 export interface IMovie {
     id: number
     nextPage: number | null
@@ -10,8 +12,8 @@ export interface IMovie {
     movieDetails:[]
     movie_id:number
     overview:string
-    genres:[]
+    genres:IGenre[]
     backdrop_path:string
-    genre_id:number
+    genre_ids:number
 }
 
