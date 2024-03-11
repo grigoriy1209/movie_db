@@ -10,13 +10,13 @@ interface IProps extends PropsWithChildren{
 
 
 const MovieInfo:FC<IProps> = ({movieInfo}) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  // const navigate = useNavigate();
+  // const location = useLocation();
     const {id,title,poster_path,vote_average,overview,backdrop_path} = movieInfo;
 
-const back =()=>{
-    navigate(location.state? location.state.from:'/movies?page=1')
-}
+// const back =()=>{
+//     navigate(location.state? location.state.from:'/movies?page=1')
+// }
     return (
         <div>
 
@@ -30,7 +30,7 @@ const back =()=>{
                 <FaStar key={index} />
             ))}
             <div>{overview}</div>
-            <button onClick={back}>back</button>
+            {/*<button onClick={back}>back</button>*/}
 
 
         </div>
