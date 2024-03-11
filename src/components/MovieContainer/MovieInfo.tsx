@@ -15,7 +15,7 @@ const MovieInfo:FC<IProps> = ({movieInfo}) => {
     const {id,title,poster_path,vote_average,overview,backdrop_path} = movieInfo;
 
 const back =()=>{
-    navigate(location.state? location.state.from:'/movies?page=')
+    navigate(location.state? location.state.from:'/movies?page=1')
 }
     return (
         <div>
